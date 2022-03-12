@@ -1,7 +1,13 @@
+import '../App.css'
+
 const Home = () => {
+
     return (
-        <div className="home">
-            <h1>Welcome to Nugget Bridge</h1>
+        <div className="container">
+            <div className="top start">
+            </div>
+            <div className="bottom blank">
+            </div>
         </div>
     )
 }

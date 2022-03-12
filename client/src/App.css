@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
+.container {
+  display: grid; 
+  height: 100vh;
+  width: 100vw;
+  /* grid-template-columns: 0.3fr 0.7fr;  */
+  grid-template-rows: 1.5fr 1.5fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "top"
+    "bottom"; 
+  justify-content: space-around;
+  align-items: stretch;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.sidebar { 
+  grid-area: sidebar; 
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.top {
+  grid-area: top;
+  width: 44vw
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.start {
+  background-image: url(../public/title-screen-logo.gif);
+  background-repeat: no-repeat; 
+  background-size: contain;
+}
+
+.bottom {
+  grid-area: bottom;
+  width: 44vw
+}
+
+.blank{
+  background-image: url(../public/team-canvas-background.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.animated-logo {
+  width: 75%;
+  /* object-fit: cover; */
+}
+
+.nb-logo {
+  width: 80%;
+}
+
+.team-background {
+  width: 75%;
+  /* object-fit:cover; */
 }
