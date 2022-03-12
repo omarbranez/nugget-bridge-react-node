@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Splash from './pages/Splash'
 import Battle from './pages/Battle'
+import MessageBox from './components/MessageBox';
+import TeamBox from './components/TeamBox';
 import './App.css';
 
 
@@ -14,8 +16,8 @@ function App() {
           <Route path='/battle' element={<Battle/>}/>
         </Routes>
       </BrowserRouter>
-      <div className="bottom blank">
-      </div>
+      <MessageBox/>
+      <TeamBox/>
     </div>
   );
 }
