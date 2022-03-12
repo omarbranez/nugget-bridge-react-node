@@ -8,8 +8,8 @@
   grid-template-areas: 
     "top"
     "bottom"; 
-  justify-content: space-around;
-  align-items: stretch;
+  justify-content: center;
+  /* align-items: stretch; */
 }
 .sidebar { 
   grid-area: sidebar; 
@@ -18,7 +18,7 @@
 
 .top {
   grid-area: top;
-  width: 44vw
+  width: 50vw
 }
 
 .start {
@@ -29,11 +29,17 @@
 
 .bottom {
   grid-area: bottom;
-  width: 44vw
+  width: 50vw
 }
 
 .blank{
   background-image: url(../public/team-canvas-background.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.battle{
+  background-image: url(../public/battle-background-1.png);
   background-repeat: no-repeat;
   background-size: contain;
 }

@@ -1,6 +1,12 @@
+import { useEffect } from 'react'
+
 import '../App.css'
 
 const Home = () => {
+
+    window.addEventListener('keydown', (e) => {
+        e.key === 'Enter' && console.log("return was pressed")
+    })
 
     return (
         <div className="container">

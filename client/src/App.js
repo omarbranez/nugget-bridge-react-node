@@ -1,16 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
+import Splash from './pages/Splash'
+import Battle from './pages/Battle'
+import './App.css';
 
 
 function App() {
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/home' element={<Home/>}/>
-      </Routes>
-    </BrowserRouter>
+    <div className="container">
+      <BrowserRouter>
+        <Routes>
+          <Route path='/home' element={<Splash />} />
+          <Route path='/battle' element={<Battle/>}/>
+        </Routes>
+      </BrowserRouter>
+      <div className="bottom blank">
+      </div>
+    </div>
   );
 }
 
