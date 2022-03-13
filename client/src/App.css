@@ -199,3 +199,9 @@
   transition-delay: 0.5s;
   background: green;
 }
+
+.hp-bar-text {
+  position: absolute;
+  z-index: 10; 
+  left: 40%;
+}

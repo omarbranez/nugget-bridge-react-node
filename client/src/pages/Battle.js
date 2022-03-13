@@ -1,44 +1,35 @@
-import HealthBar from "../components/HealthBar"
+// import HealthBar from "../components/HealthBar"
+// import PokemonName from "../components/PokemonName"
+import CurrentPokemon from "../components/CurrentPokemon"
 
 const Battle = () => {
 
     const playerPokemon = {
+        pokemonId: 3,
         name: "Venusaur",
         currentHP: 300,
         maxHP: 300,
+        move1: "Solar Beam",
+        move2: "Earthquake",
+        move3: "Sunny Day",
+        move4: "Sludge Bomb"
     }
 
     const cpuPokemon = {
+        pokemonId: 6,
         name: "Charizard",
         currentHP: 50,
         maxHP: 300,
+        move1: "Flamethrower",
+        move2: "Dragon Claw",
+        move3: "Roost",
+        move4: "Hurricane"
     }
 
     return (
         <div className="battle-screen">
-            <div className="cpu-info">
-                <div className="cpu-pokemon-name">
-                    <div className="pokemon-name-content">
-                    {cpuPokemon.name}
-                    </div>
-                </div>
-                <HealthBar owner="cpu" currentHP={cpuPokemon.currentHP} maxHP={cpuPokemon.maxHP}/>
-            </div>
-            <div className="cpu-pokemon" >
-                <img src='/6.png' />
-            </div>
-            <div className="player-info">
-                <div className="player-pokemon-name">
-                <div className="pokemon-name-content">
-
-                    {playerPokemon.name}
-                    </div>
-                </div>
-                <HealthBar owner="player" currentHP={playerPokemon.currentHP} maxHP={playerPokemon.maxHP}/>
-            </div>
-            <div className="player-pokemon">
-                <img src='/3.png'/>
-            </div>
+            <CurrentPokemon owner="cpu" pokemon={cpuPokemon}/>
+            <CurrentPokemon owner="player" pokemon={playerPokemon}/>
         </div>
     )
 }
