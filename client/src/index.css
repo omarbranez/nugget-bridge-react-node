@@ -24,12 +24,12 @@ code {
   background-color: #4CAF50;
   border: none;
   color: white;
-  padding: 10% 10%;
+  padding: 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 1.5vw;
-  margin: 4px 2px;
+  margin: 2px 2px;
   cursor: pointer;
   transform: scale(0.95);
   transition-duration: 0.4s;

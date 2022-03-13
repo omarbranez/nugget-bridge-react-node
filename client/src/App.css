@@ -217,3 +217,13 @@
   z-index: 10; 
   left: 40%;
 }
+
+.team-pokemon-tooltip {   
+  width:200px;
+  padding:10px;
+  background:rgba(255,255,255,1);
+  border-radius:3px;
+  position:relative;
+  margin:-10px 20px 0 -10px;
+  box-shadow:0 0 50px 0 rgba(0,0,0,.5);
+}
