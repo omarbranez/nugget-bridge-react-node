@@ -23,6 +23,28 @@ const MessageBox = () => {
         ]
     }
 
+    const cpuPokemon = {
+        pokemonId: 6,
+        name: "Charizard",
+        currentHP: 50,
+        maxHP: 300,
+        moves: [
+            {
+                name: "Flamethrower",
+            },
+            {
+                name: "Dragon Claw",
+            },
+            {
+                name: "Roost",
+            },
+            {
+                name: "Hurricane",
+            }
+        ]
+    }
+
+
     return (
         <div className="message-box">
             <div className="move-prompt-container">

@@ -6,10 +6,10 @@ const HealthBar = ({owner, currentHP, maxHP}) => {
     useEffect(()=>{
         setValue((currentHP/maxHP) * 100 )
     }, [currentHP, maxHP])
-    
+
     return (
         <div className={`${owner}-pokemon-health`}>
-            <span className="hp-bar-text" style={{position: "absolute", zIndex: "10", left: "40%",}}>{currentHP} / {maxHP}</span>
+            <span className="hp-bar-text" >{currentHP} / {maxHP}</span>
             <div style={{ width: `${value}%` }}  className="progress">
             </div>
         </div>
