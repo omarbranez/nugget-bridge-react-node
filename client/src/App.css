@@ -84,10 +84,12 @@
   grid-template-rows: 1fr 1fr; 
   gap: 0px 0px; 
   grid-template-areas: 
-    "."
-    "."; 
+    "cpu-pokemon-name"
+    "cpu-pokemon-health"; 
   grid-area: cpu-info; 
 }
+.cpu-pokemon-name { grid-area: cpu-pokemon-name; }
+.cpu-pokemon-health { grid-area: cpu-pokemon-health; }
 .player-info {
   display: grid; 
   grid-auto-columns: 1fr; 
@@ -95,10 +97,12 @@
   grid-template-rows: 1fr 1fr; 
   gap: 0px 0px; 
   grid-template-areas: 
-    "."
-    "."; 
+    "player-pokemon-name"
+    "player-pokemon-health"; 
   grid-area: player-info; 
 }
+.player-pokemon-name { grid-area: player-pokemon-name; }
+.player-pokemon-health { grid-area: player-pokemon-health; }
 
 .animated-logo {
   width: 75%;
