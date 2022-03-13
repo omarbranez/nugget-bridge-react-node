@@ -10,7 +10,7 @@ const Battle = () => {
 
     const cpuPokemon = {
         name: "Charizard",
-        currentHP: 200,
+        currentHP: 50,
         maxHP: 300,
     }
 

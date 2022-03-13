@@ -1,8 +1,16 @@
-const HealthBar = ({owner}) => {
-    console.log(owner)
+import { useState, useEffect } from 'react'
+const HealthBar = ({owner, currentHP, maxHP}) => {
+
+    const [value, setValue] = useState(0)
+
+    useEffect(()=>{
+        setValue((currentHP/maxHP) * 100 )
+    }, [currentHP, maxHP])
     return (
         <div className={`${owner}-pokemon-health`}>
-            <img width="75%" src="/progress-bar-blank-transparent.png"/>
+            <span className="hp-bar-text" style={{position: "absolute", zIndex: "10", left: "40%",}}>{currentHP} / {maxHP}</span>
+            <div style={{ width: `${value}%` }}  className="progress">
+            </div>
         </div>
     )
 }

@@ -89,7 +89,18 @@
   grid-area: cpu-info; 
 }
 .cpu-pokemon-name { grid-area: cpu-pokemon-name; }
-.cpu-pokemon-health { grid-area: cpu-pokemon-health; }
+.cpu-pokemon-health { 
+  grid-area: cpu-pokemon-health; 
+  position: relative;
+  width: 100%;
+  height: 50%;
+  margin: 0 auto; 
+  padding: 15px 40px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+}
 .player-info {
   display: grid; 
   grid-auto-columns: 1fr; 
@@ -102,7 +113,18 @@
   grid-area: player-info; 
 }
 .player-pokemon-name { grid-area: player-pokemon-name; }
-.player-pokemon-health { grid-area: player-pokemon-health; }
+.player-pokemon-health { 
+  grid-area: player-pokemon-health; 
+  position: relative;
+  width: 100%;
+  height: 50%;
+  margin: 0 auto; 
+  padding: 15px 40px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+}
 
 .animated-logo {
   width: 75%;
@@ -127,4 +149,42 @@
 @keyframes hop {
   from {transform: translateY(0px);}
   to {transform: translateY(10px);}
+}
+
+/* .progress {
+  background-color:green;
+  height: 10px;
+  border-radius: 1rem;
+  transition: 1s ease;
+  transition-delay: 0.5s;
+}
+
+.progress-div {
+  background-color: rgb(233, 233, 233);
+  border-radius: .5rem;
+} */
+
+.progress {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: #f1f1f1;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress:after {
+  /* content: ''; */
+  content: attr(hp-content);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+  transition: 1s ease;
+  transition-delay: 0.5s;
+  background: green;
 }
