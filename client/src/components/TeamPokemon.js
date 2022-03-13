@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import TeamPokemonTooltip from './TeamPokemonTooltip'
 
-const TeamPokemon = ({pokemon}) => {
+const TeamPokemon = ({ pokemon }) => {
 
     const [hovered, setHovered] = useState(false)
+    const [active, setActive] = useState(false)
 
     const handleMouseEnter = () => {
         setHovered(true)
@@ -12,12 +14,16 @@ const TeamPokemon = ({pokemon}) => {
         setHovered(false)
     }
 
-    return (
-        <div className={`team-${pokemon.position}`} style={{display: "flex", justifyContent: "left"}}>
+    const handleImageClick = () => {
+        setActive(!active)
+    }
 
-        <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            <img className={`team-pokemon ${hovered && 'hop'}`} height="100%" src={`/pokemon/mini/${pokemon.pokemonId}.png`} />
-        </div>
+    return (
+        <div className={`team-${pokemon.position}`} style={{ display: "flex", justifyContent: "left" }}>
+            <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                <img onClick={handleImageClick} className={`team-pokemon ${hovered && 'hop'}`} height="100%" src={`/pokemon/mini/${pokemon.pokemonId}.png`} />
+            </div>
+            <TeamPokemonTooltip pokemon={pokemon} active={active}/>
         </div>
     )
 }
