@@ -22,6 +22,7 @@
 
 .message-box{
   grid-area: message-box;
+  
 }
 
 .start {
@@ -138,6 +139,30 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
 }
 
+.move-prompt-container {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "prompt-container move-button-container"; 
+}
+.move-button-container {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "move-0 move-2"
+    "move-1 move-3"; 
+  grid-area: move-button-container; 
+}
+.move-0 { grid-area: move-0; }
+.move-1 { grid-area: move-1; }
+.move-2 { grid-area: move-2; }
+.move-3 { grid-area: move-3; }
+.prompt-container { grid-area: prompt-container; }
+
 .animated-logo {
   width: 75%;
   /* object-fit: cover; */
@@ -162,19 +187,6 @@
   from {transform: translateY(0px);}
   to {transform: translateY(10px);}
 }
-
-/* .progress {
-  background-color:green;
-  height: 10px;
-  border-radius: 1rem;
-  transition: 1s ease;
-  transition-delay: 0.5s;
-}
-
-.progress-div {
-  background-color: rgb(233, 233, 233);
-  border-radius: .5rem;
-} */
 
 .progress {
   position: relative;
