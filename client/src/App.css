@@ -41,7 +41,22 @@
   background-image: url(../public/team-canvas-background.png);
   background-repeat: no-repeat;
   background-size: cover;
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "team-1 team-4"
+    "team-2 team-5"
+    "team-3 team-6"; 
 }
+
+.team-1 { grid-area: team-1; }
+.team-2 { grid-area: team-2; }
+.team-3 { grid-area: team-3; }
+.team-4 { grid-area: team-4; }
+.team-5 { grid-area: team-5; }
+.team-6 { grid-area: team-6; }
 
 .battle-screen {
   background-image: url(../public/battle-background-1.png);
@@ -62,4 +77,15 @@
 .team-background {
   width: 75%;
   /* object-fit:cover; */
+}
+.hop {
+  animation-name : hop;
+  animation-iteration-count : infinite;
+  animation-direction : alternate;
+  animation-duration : .2s;
+}
+
+@keyframes hop {
+  from {transform: translateY(0px);}
+  to {transform: translateY(10px);}
 }
