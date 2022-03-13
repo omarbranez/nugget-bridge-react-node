@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const TeamPokemon = () => {
+const TeamPokemon = ({pokemon}) => {
 
     const [hovered, setHovered] = useState(false)
 
@@ -13,8 +13,11 @@ const TeamPokemon = () => {
     }
 
     return (
+        <div className={`team-${pokemon.position}`} style={{display: "flex", justifyContent: "left"}}>
+
         <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            <img className={`team-pokemon ${hovered && 'hop'}`} height="100%" src="/pokemon/mini/1.png" />
+            <img className={`team-pokemon ${hovered && 'hop'}`} height="100%" src={`/pokemon/mini/${pokemon.pokemonId}.png`} />
+        </div>
         </div>
     )
 }
