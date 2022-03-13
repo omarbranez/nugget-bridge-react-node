@@ -88,7 +88,16 @@
     "cpu-pokemon-health"; 
   grid-area: cpu-info; 
 }
-.cpu-pokemon-name { grid-area: cpu-pokemon-name; }
+.pokemon-name-content{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.cpu-pokemon-name { 
+  grid-area: cpu-pokemon-name; 
+  position: relative;
+
+}
 .cpu-pokemon-health { 
   grid-area: cpu-pokemon-health; 
   position: relative;
@@ -112,7 +121,10 @@
     "player-pokemon-health"; 
   grid-area: player-info; 
 }
-.player-pokemon-name { grid-area: player-pokemon-name; }
+.player-pokemon-name { 
+  grid-area: player-pokemon-name; 
+  position: relative;
+}
 .player-pokemon-health { 
   grid-area: player-pokemon-health; 
   position: relative;
@@ -176,8 +188,7 @@
 }
 
 .progress:after {
-  /* content: ''; */
-  content: attr(hp-content);
+  content: '';
   position: absolute;
   left: 0;
   width: 100%;

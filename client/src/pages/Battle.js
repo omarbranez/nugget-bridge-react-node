@@ -18,6 +18,9 @@ const Battle = () => {
         <div className="battle-screen">
             <div className="cpu-info">
                 <div className="cpu-pokemon-name">
+                    <div className="pokemon-name-content">
+                    {cpuPokemon.name}
+                    </div>
                 </div>
                 <HealthBar owner="cpu" currentHP={cpuPokemon.currentHP} maxHP={cpuPokemon.maxHP}/>
             </div>
@@ -26,6 +29,10 @@ const Battle = () => {
             </div>
             <div className="player-info">
                 <div className="player-pokemon-name">
+                <div className="pokemon-name-content">
+
+                    {playerPokemon.name}
+                    </div>
                 </div>
                 <HealthBar owner="player" currentHP={playerPokemon.currentHP} maxHP={playerPokemon.maxHP}/>
             </div>
