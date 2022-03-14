@@ -1,5 +1,3 @@
-import {useState} from 'react'
-
 const TeamPokemonTooltip = ({active, pokemon}) => {
 
     return (

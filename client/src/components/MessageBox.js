@@ -1,3 +1,5 @@
+import {useState, useEffect} from 'react'
+import { useAppContext } from '../context/appContext';
 import MoveButton from "./MoveButton"
 
 const MessageBox = () => {
@@ -43,14 +45,27 @@ const MessageBox = () => {
             }
         ]
     }
+    const [ movePrompt, setMovePrompt ] = useState(false)
+    const [ battleMessage, setBattleMessage ] = useState(false)
+    const [ switchPrompt, setSwitchPrompt ] = useState(false)
+    const { message, displayMessage, clearMessage } = useAppContext()
 
+    useEffect(()=> {
+        setBattleMessage(!battleMessage)
+        displayMessage('Venusaur used Solar Beam')
+    }, [])
 
     return (
         <div className="message-box">
+                <div className="message">
+                    {message}
+                </div>
             <div className="move-prompt-container">
+                {/* class name needs to change between states.
+                so animated text gets rendered properly and buttons are displayed */}
                 <span>Please select a move</span>
                 <div className="move-button-container">
-                    {playerPokemon.moves.map((move, index) => <MoveButton name={move.name} number={index} />)}
+                    {playerPokemon.moves.map((move, index) => <MoveButton pokemon={playerPokemon} name={move.name} number={index} />)}
                 </div>
             </div>
         </div>
