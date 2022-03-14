@@ -1,5 +1,5 @@
 import { useReducer, createContext, useContext } from 'react'
-import { DISPLAY_MESSAGE, CLEAR_MESSAGE } from './actions'
+import { DISPLAY_MESSAGE, CLEAR_MESSAGE, DISPLAY_MOVES, CLEAR_MOVES, DISPLAY_SWITCH, CLEAR_SWITCH } from './actions'
 import reducer from './reducer'
 const user = localStorage.getItem('user')
 const token = localStorage.getItem('token')
@@ -22,15 +22,32 @@ const AppProvider = ({children}) => {
         console.log(message)
         dispatch({ type: DISPLAY_MESSAGE, payload: message})
         const clear = setInterval(()=>{
-            clearMessage(clear)
+            clearInterval(clear)
+            displayMoves()
         }, 2000)
     }
 
-    const clearMessage = async({}) => {
+    const clearMessage = async() => {
         dispatch({ type: CLEAR_MESSAGE})
     }
 
-    return <AppContext.Provider value={{...state, displayMessage, clearMessage}}>{children}</AppContext.Provider>
+    const displayMoves = async() => {
+        dispatch({ type: DISPLAY_MOVES})
+    }
+
+    const clearMoves = async() => {
+        dispatch ({ type: CLEAR_MOVES})
+    }
+
+    const displaySwitch = async() => {
+        dispatch({ type: DISPLAY_SWITCH})
+    }
+
+    const clearSwitch = async() => {
+        dispatch({ type: CLEAR_SWITCH})
+    }
+
+    return <AppContext.Provider value={{...state, displayMessage, clearMessage, displayMoves, clearMoves, displaySwitch, clearSwitch}}>{children}</AppContext.Provider>
 }
 
 const useAppContext = () => {
