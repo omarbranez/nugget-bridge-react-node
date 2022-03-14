@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import { useAppContext } from '../context/appContext';
 import MoveButton from "./MoveButton"
 import SwitchButton from './SwitchButton';
@@ -175,12 +175,12 @@ const MessageBox = () => {
             }
         ]
     }
-    const [ movePrompt, setMovePrompt ] = useState(false)
-    const [ battleMessage, setBattleMessage ] = useState(false)
-    const [ switchPrompt, setSwitchPrompt ] = useState(false)
+    const [movePrompt, setMovePrompt] = useState(false)
+    const [battleMessage, setBattleMessage] = useState(false)
+    const [switchPrompt, setSwitchPrompt] = useState(false)
     const { messageMode, message, displayMessage, clearMessage, displayMoves, clearMoves, displaySwitch, clearSwitch } = useAppContext()
 
-    useEffect(()=> {
+    useEffect(() => {
         // displayMessage(!battleMessage)
         displayMessage('Venusaur used Solar Beam')
     }, [])
@@ -189,22 +189,29 @@ const MessageBox = () => {
     console.log(messageMode)
     console.log(playerPokemon)
 
+    const handleSwitchClick = () => {
+        displaySwitch()
+    }
+
     return (
         <div className="message-box">
-                {messageMode === 'message' && <div className="message">
-                    {message}
-                </div>}
+            {messageMode === 'message' && <div className="message">
+                {message}
+            </div>}
             {messageMode === 'move' && <div className="move-prompt-container">
                 {/* class name needs to change between states.
                 so animated text gets rendered properly and buttons are displayed */}
                 <span>Please select a move</span>
+                <div className="switch-button-container">
+                    <button type="button" className="button" onClick={handleSwitchClick}>Switch</button>
+                </div>
                 <div className="move-button-container">
                     {playerPokemon.moves.map((move, index) => <MoveButton pokemon={playerPokemon} name={move.name} number={index} />)}
                 </div>
             </div>}
             {messageMode === 'switch' && <div className="switch-prompt-container">
                 {playerTeam.map((pokemon, index) => <SwitchButton pokemon={pokemon} />)}
-                </div>
+            </div>
             }
         </div>
     )
