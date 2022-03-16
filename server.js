@@ -1,6 +1,6 @@
 import express from 'express'
 import dotenv from 'dotenv'
-import connectDB from '../muttmap-node-backend/db/connect'
+import connectDB from './db/connect.js'
 
 const app = express()
 

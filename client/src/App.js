@@ -9,7 +9,7 @@ import './App.css';
 
 function App() {
   
-  const { message, displayMessage, clearMessage } = useAppContext()
+  // const { message, displayMessage, clearMessage } = useAppContext()
   return (
     <div className="container">
       <BrowserRouter>
@@ -18,7 +18,7 @@ function App() {
           <Route path='/battle' element={<Battle/>}/>
         </Routes>
       </BrowserRouter>
-      <MessageBox message={message} />
+      <MessageBox/>
       <TeamBox/>
     </div>
   );

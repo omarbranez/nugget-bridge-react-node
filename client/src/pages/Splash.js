@@ -1,6 +1,7 @@
 import {useEffect} from 'react'
 import {useNavigate} from 'react-router-dom'
 const Splash = () => {
+    
     let navigate = useNavigate()
 
     const handleEnter = (e) => {

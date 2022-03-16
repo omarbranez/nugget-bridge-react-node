@@ -21,10 +21,10 @@ const AppProvider = ({children}) => {
     const displayMessage = async(message) => {
         console.log(message)
         dispatch({ type: DISPLAY_MESSAGE, payload: message})
-        const clear = setInterval(()=>{
-            clearInterval(clear)
-            displayMoves()
-        }, 2000)
+        // const clear = setInterval(()=>{
+        //     clearInterval(clear)
+        //     displayMoves()
+        // }, 2000)
     }
 
     const clearMessage = async() => {

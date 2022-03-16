@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useAppContext } from '../context/appContext';
+import Typewriter from 'typewriter-effect'
 import MovePrompt from './MovePrompt';
 import SwitchPrompt from './SwitchPrompt';
 
@@ -134,27 +135,6 @@ const MessageBox = () => {
         }
     ]
 
-    // const playerPokemon = {
-    //     pokemonId: 3,
-    //     name: "Venusaur",
-    //     currentHP: 300,
-    //     maxHP: 300,
-    //     moves: [
-    //         {
-    //             name: "Solar Beam",
-    //         },
-    //         {
-    //             name: "Earthquake",
-    //         },
-    //         {
-    //             name: "Sunny Day",
-    //         },
-    //         {
-    //             name: "Sludge Bomb",
-    //         }
-    //     ]
-    // }
-
     const cpuPokemon = {
         pokemonId: 6,
         name: "Charizard",
@@ -175,19 +155,15 @@ const MessageBox = () => {
             }
         ]
     }
-    const [movePrompt, setMovePrompt] = useState(false)
-    const [battleMessage, setBattleMessage] = useState(false)
-    const [switchPrompt, setSwitchPrompt] = useState(false)
+
     const { messageMode, message, displayMessage, clearMessage, displayMoves, clearMoves, displaySwitch, clearSwitch } = useAppContext()
 
-    useEffect(() => {
+    useEffect(() => { // this is only for testing
         // displayMessage(!battleMessage)
         displayMessage('Venusaur used Solar Beam')
     }, [])
 
     const playerPokemon = playerTeam.filter(pokemon => pokemon.position === 1)[0]
-    console.log(messageMode)
-    console.log(playerPokemon)
 
     const handleSwitchClick = () => {
         displaySwitch()
@@ -200,7 +176,17 @@ const MessageBox = () => {
     return (
         <div className="message-box">
             {messageMode === 'message' && <div className="message">
-                {message}
+                <Typewriter
+                    onInit={(typewriter) => {
+                        typewriter.typeString(`${message}`)
+                        .pauseFor(1000)
+                        // .deleteAll()
+                        .callFunction(()=> {
+                            displayMoves()
+                        })
+                        .start()
+                    }}
+                />
             </div>}
             {messageMode === 'move' && <MovePrompt playerPokemon={playerPokemon} handleSwitchClick={handleSwitchClick}/>}
             {messageMode === 'switch' && <SwitchPrompt playerTeam={playerTeam} handleBackClick={handleBackClick}/>}

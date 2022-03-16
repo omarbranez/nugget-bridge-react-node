@@ -37,7 +37,6 @@ const TeamBox = () => {
     return (
         <div className="bottom blank">
             {playerTeam.map(pokemon => <TeamPokemon pokemon={pokemon}/>)}
-            
         </div>
     )
 }
