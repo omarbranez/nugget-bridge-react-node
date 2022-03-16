@@ -193,6 +193,10 @@ const MessageBox = () => {
         displaySwitch()
     }
 
+    const handleBackClick = () => {
+        displayMoves()
+    }
+
     return (
         <div className="message-box">
             {messageMode === 'message' && <div className="message">
@@ -201,16 +205,30 @@ const MessageBox = () => {
             {messageMode === 'move' && <div className="move-prompt-container">
                 {/* class name needs to change between states.
                 so animated text gets rendered properly and buttons are displayed */}
-                <span>Please select a move</span>
-                <div className="switch-button-container">
-                    <button type="button" className="button" onClick={handleSwitchClick}>Switch</button>
+                <div className="move-prompt-message">
+                    <div className="move-prompt">
+                        <span>Please select a move</span>
+                    </div>
+                    <div className="switch-button-container">
+                        <button type="button" className="button" onClick={handleSwitchClick}>Switch</button>
+                    </div>
                 </div>
                 <div className="move-button-container">
                     {playerPokemon.moves.map((move, index) => <MoveButton pokemon={playerPokemon} name={move.name} number={index} />)}
                 </div>
             </div>}
             {messageMode === 'switch' && <div className="switch-prompt-container">
-                {playerTeam.map((pokemon, index) => <SwitchButton pokemon={pokemon} />)}
+                <div className="switch-prompt-message">
+                    <div className="switch-prompt">
+                        <span>Please select a Pokemon to switch to</span>
+                    </div>
+                    <div className="switch-back-button">
+                        <button type="button" className="button" onClick={handleBackClick}>Cancel Switch</button>
+                    </div>
+                </div>
+                <div className="switch-buttons">
+                    {playerTeam.map((pokemon, index) => pokemon.position !== 1 && <SwitchButton pokemon={pokemon} />)}
+                </div>
             </div>
             }
         </div>

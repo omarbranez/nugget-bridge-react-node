@@ -145,8 +145,22 @@
   grid-template-rows: 1fr; 
   gap: 0px 0px; 
   grid-template-areas: 
-    "prompt-container move-button-container"; 
+    "move-prompt-message move-button-container"; 
 }
+.move-prompt-message{  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "move-prompt"
+    "switch-button-container";
+  grid-area: move-prompt-message;
+}
+
+.move-prompt {grid-area: move-prompt}
+.switch-button-container { grid-area: switch-button-container; }
+
 .move-button-container {
   display: grid; 
   grid-template-columns: 1fr 1fr; 
@@ -162,6 +176,46 @@
 .move-2 { grid-area: move-2; }
 .move-3 { grid-area: move-3; }
 .prompt-container { grid-area: prompt-container; }
+
+.switch-prompt-container {  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "switch-prompt-message switch-buttons";
+}
+
+.switch-prompt-message {  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "switch-prompt"
+    "switch-back-button";
+  grid-area: switch-prompt-message;
+}
+
+.switch-prompt {grid-area: switch-prompt}
+.switch-back-button { grid-area: switch-back-button; }
+
+.switch-buttons {  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "switch-1 switch-4"
+    "switch-2 switch-5"
+    "switch-3 .";
+  grid-area: switch-buttons;
+}
+.switch-1 { grid-area: switch-1; }
+.switch-2 { grid-area: switch-2; }
+.switch-3 { grid-area: switch-3; }
+.switch-4 { grid-area: switch-4; }
+.switch-5 { grid-area: switch-5; }
 
 .animated-logo {
   width: 75%;

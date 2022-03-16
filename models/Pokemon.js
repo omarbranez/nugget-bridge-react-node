@@ -2,12 +2,10 @@ import mongoose from 'mongoose'
 
 const pokemonSchema = new mongoose.Schema(
     {
-
-    },
-    {
         name: {
             type: String,
         },
+        
     }
 )
 
