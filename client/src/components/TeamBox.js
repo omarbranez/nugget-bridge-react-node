@@ -36,7 +36,7 @@ const TeamBox = () => {
 
     return (
         <div className="bottom blank">
-            {playerTeam.map(pokemon => <TeamPokemon pokemon={pokemon}/>)}
+            {playerTeam.map(pokemon => <TeamPokemon key={`team-pokemon-${pokemon.position}`} pokemon={pokemon}/>)}
         </div>
     )
 }

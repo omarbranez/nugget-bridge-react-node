@@ -14,7 +14,7 @@ const MovePrompt = ({playerPokemon, handleSwitchClick}) => {
             </div>
         </div>
         <div className="move-button-container">
-            {playerPokemon.moves.map((move, index) => <MoveButton pokemon={playerPokemon} name={move.name} number={index} />)}
+            {playerPokemon.moves.map((move, index) => <MoveButton key={`${playerPokemon}-move-${index}`} pokemon={playerPokemon} name={move.name} number={index} />)}
         </div>
     </div>
     )

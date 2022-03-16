@@ -11,6 +11,25 @@ const initialState = {
     token: token,
     messageBoxMode: null,
     message: '',
+    playerTeam: [],
+    playerPokemon: null,
+    cpuTeam: [],
+    cpuPokemon: null,
+    battle: {
+        turn: 1,
+        attacker: null,
+        defender: null,
+        attackStatUsed: null,
+        defenseStatUsed: null,
+        accuracyCheck: false,
+        procCheck: false,
+        critModifier: 0,
+        randomModifier: 0,
+        effectiveModifier: 0,
+        stabModifier: 0,
+        burnModifier: 0,
+        attackDamage: 0,
+    }
 }
 
 const AppContext = createContext()

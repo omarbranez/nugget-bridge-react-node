@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { useAppContext } from '../context/appContext';
 import Typewriter from 'typewriter-effect'
 import MovePrompt from './MovePrompt';
@@ -156,7 +156,7 @@ const MessageBox = () => {
         ]
     }
 
-    const { messageMode, message, displayMessage, clearMessage, displayMoves, clearMoves, displaySwitch, clearSwitch } = useAppContext()
+    const { messageMode, message, displayMessage, displayMoves, displaySwitch } = useAppContext()
 
     useEffect(() => { // this is only for testing
         // displayMessage(!battleMessage)
@@ -180,11 +180,13 @@ const MessageBox = () => {
                     onInit={(typewriter) => {
                         typewriter.typeString(`${message}`)
                         .pauseFor(1000)
-                        // .deleteAll()
                         .callFunction(()=> {
                             displayMoves()
                         })
                         .start()
+                    }}
+                    options={{
+                        delay: 25
                     }}
                 />
             </div>}

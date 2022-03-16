@@ -1,5 +1,5 @@
 import CurrentPokemon from "../components/CurrentPokemon"
-import { useAppContext } from "../context/appContext"
+// import { useAppContext } from "../context/appContext"
 
 const Battle = () => {
 
@@ -45,7 +45,7 @@ const Battle = () => {
         ]
     }
 
-    const { message } = useAppContext()
+    // const { message } = useAppContext()
 
     return (
         <div className="battle-screen">
